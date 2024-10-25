@@ -1,0 +1,49 @@
+{
+  "name": "vscode-se2",
+  "displayName": "vscode-se2",
+  "description": "调用vscode扩展代码",
+  "publisher": "CamilleFerros",
+  "version": "0.0.5",
+  "engines": {
+    "vscode": "^1.29.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "*"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.vscode-se2-cmd",
+        "title": "vscode-se2命令"
+      },
+      {
+        "command": "extension.vscode-se2-manage",
+        "title": "vscode-se2管理脚本"
+      }
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "vscode-se2配置",
+      "properties": {
+        "vscode-se2.script": {
+          "type": "array",
+          "default": [],
+          "description": "vscode-se2数据"
+        },
+        "vscode-se2.config": {
+          "type": "object",
+          "default": {},
+          "description": "vscode-se2自定义配置"
+        }
+      }
+    }
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "ws": "^7.4.4"
+  }
+}
